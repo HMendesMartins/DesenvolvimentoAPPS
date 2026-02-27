@@ -1,0 +1,99 @@
+<script>
+    let hpBoss = 300;
+    let danobossfix = 20;
+    let danobossvar = 20;
+    let totalmult = 1;
+    let hpheroi = 200;
+    let manaHeroi = 100;
+    let invencivel = 0;
+    let manaGastaTotal = 0;
+    let acao = 0;
+    let menu = "Escolha uma ação \n"
+                + "1 - Ataque Básico\n"
+                + "2 - Skill\n"
+                + "3 - Ultimate\n"
+                + "4 - Fuga tatica\n"
+                + "5 - Desistir"
+         
+    alert("O Chefe Surgiu: 300hp")
+    for (let turno = 1; turno <= 15; turno++) {
+        if (hpBoss <= 0) {
+            alert("O Boss foi Derrotado!")
+            break;
+        }
+        if (hpheroi <= 0) {
+            alert("O Herói foi Derrotado! Tente novamente por f5")
+            break;
+        }
+        let escolha = prompt(menu);
+        acao = parseInt(escolha);
+        if (acao < 1 || acao > 5) {
+             alert("Opção inválida! Tente novamente por f5.");
+             break;
+        }
+        if (acao == 5){
+            alert("Fraco! Você fugiu! Tente novamente por f5");
+            break;
+        }
+            switch(acao) {
+                case 1:
+                alert("Ataque Básico. 20 dano");
+                    hpBoss -= 20;
+                    break;
+                case 2:
+                    if (manaHeroi >= 30) {
+                        alert("Skill. 50 dano");
+                        hpBoss -= 50;
+                        manaHeroi -= 30;
+                        manaGastaTotal += 30;
+                    } else {
+                        alert("Mana insuficiente!");
+                    }
+                    break;
+                case 3:
+                    if (manaGastaTotal >= 50) {
+                        alert("Ultimate. 150 dano");
+                        hpBoss -= 150;
+                        manaGastaTotal = 0;
+                    } else {
+                        alert("Ultimate não carregada!");
+                    }
+                    break;
+                case 4:
+                    alert("Você fugiu!")
+                    if (hpheroi < 200){
+                        hpheroi += 20
+                        if (hpheroi > 200){
+                            hpheroi = 200
+                        }
+                        alert("O herói recupera 20 de vida!")
+                    }
+                    else{
+                        alert("O herói já está com a vida máxima!")
+                    }
+                    alert("O boss treinou durante seu retiro! dmg x 1.25")
+                    totalmult += 0.25
+                    invencivel = 1
+                    break;
+            }
+            if (invencivel == 0){
+                danobossvar = danobossfix * totalmult
+            }
+            else{
+                danobossvar = 0 
+            }
+            if (hpBoss <= 0){
+                alert("O boss morreu!")
+                break;
+            }
+            hpheroi -= danobossvar;
+            alert("Boss ataca! Herói perde "+ danobossvar +" HP.");
+            alert("\n| HP Boss: " + hpBoss + "\n| HP Herói: " + hpheroi + "| Mana Herói:" + manaHeroi);
+            invencivel = 0
+        }
+    if (hpBoss <= 0) { 
+        alert("Vitória");
+    } else {
+        alert("Missão Falhou! O Boss continua vivo.");
+    }
+</script>
