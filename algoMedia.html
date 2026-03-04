@@ -1,10 +1,17 @@
 <script>
     var notas = [75, 60, 80, 70]
     var notaSoma = 0
+    let resultado = "falha"
     for(c = 0; c < notas.length; c++ ){
         notaSoma = notas[c] + notaSoma
+        media = notaSoma/qntd
+        if (media < 70){
+            resultado = "Reprovado"
+        }
+        else{
+            resultado = "Aprovado"
+        }
     }
-    qntd = notas.length
-    media = notaSoma/qntd
+    
     alert(media)
 </script>
