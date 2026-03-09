@@ -1,0 +1,38 @@
+<script>
+    let hero = {
+        nome: "Sigma",
+        hp: 100,
+        mp: 50, 
+        energia: 0
+    }
+    let boss = {
+        nome: "Professora de Português",
+        hp: 1000,
+        ataquefixo: 15
+    }
+    let skills = [
+        {id: 1, nome: "Mewing", dano: 15, custo: 0, energia: 0},
+        {id: 2, nome: "Moggar", dano: 30, custo: 20, energia: 0},
+        {id: 3, nome: "Farmar Aura", dano: 130, custo: 0, energia: 60}
+    ]
+
+    const atacarBoss = (tipoAtaque) => {
+        const habilidade = skills.find(s => s.id == tipoAtaque)
+        if (hero.mp >= habilidade.custo && hero.energia >= habilidade.energia){
+            boss.hp -= habilidade.dano
+            hero.mp -= habilidade.custo
+            hero.energia += habilidade.custo
+            alert(`${hero.nome} usou ${habilidade.nome}!`)
+            alert(`Causou ${habilidade.dano} de dano!`)
+        }
+        hero.hp -= boss.ataquefixo
+        alert(`**##STATUS##**\n Vida boss: ${boss.hp}.\n Vida herói: ${hero.hp}. | Aura: ${hero.mp}`)
+    while (boss.hp >= 0 && hero.hp >= 0){
+        msg = "Escolha seu ataque: "+
+            "| 1. Mewing | 2. Moggar | 3.Farmar Aura |";
+        let ataque = parseInt(prompt(msg))
+        atacarBoss(ataque)
+    }
+    }
+
+</script>
