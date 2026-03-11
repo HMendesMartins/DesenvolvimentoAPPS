@@ -1,0 +1,16 @@
+body{
+    background-color: aquamarine;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+h1{
+    width: auto;
+    height: auto;  
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
