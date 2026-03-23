@@ -8,26 +8,27 @@
      <div class="container">
         <div class="card text-center" style="color: white; background-color: yellow;
          background-size: cover; background-attachment: fixed; background-position: center;" >
+
         <div class="card-header" style="background-color: black; color: white;">RPG: Pible na batalha do riachuelo</div>
             <div class="row">
                 <div class="col text-center" id="col-heroi">
                     <ul style="margin-top: 10px; border-radius: 2px; list-style: none;">
                        
-                        <li id="nome-heroi" class="list-group-item" style="color: white; background-color: black;">Carvascon</li>
-                        <li id="imagem-heroi" class="list-group-item"><img id="imagem-heroi" src="assets/pibble.jpg" height="200px" width="200px"></li>
-                        <li id="hp-heroi" class="list-group-item"><img src="assets/escudo.png" height="25px" style="margin: 10px;"><progress id="hp-heroi" value="100" style="accent-color: red;"></progress></li>
-                        <li id="mp-heroi" class="list-group-item"><img src="assets/espada.png" height="25px" style="margin: 10px;"><progress id="mp-heroi" value="100" style="accent-color: blue;"></progress><br></li>
-                        <li id="especial" class="list-group-item"><img src="assets/especial.jpg" height="25px" style="margin: 10px;"><progress id="special" value="100" style="accent-color: yellow;"></progress></li>
+                        <li class="list-group-item" style="color: white; background-color: black;">Carvascon</li>
+                        <li class="list-group-item"><img id="imagem-heroi" src="assets/pibble.jpg" height="200px" width="200px"></li>
+                        <li class="list-group-item"><img src="assets/escudo.png" height="25px" style="margin: 10px;"><progress id="hp-heroi" value="100" style="accent-color: red;"></progress></li>
+                        <li class="list-group-item"><img src="assets/espada.png" height="25px" style="margin: 10px;"><progress id="mp-heroi" value="100" style="accent-color: blue;"></progress><br></li>
+                        <li class="list-group-item"><img src="assets/especial.jpg" height="25px" style="margin: 10px;"><progress id="special-heroi" value="100" style="accent-color: yellow;"></progress></li>
                     </ul>
                 </div>
                 <div class="col text-center" id="col-boss" style="margin-right: 35px;">
                     <ul style="margin-top: 10px; border-radius: 2px; list-style: none;">
                         
-                        <li id="nome-boss" class="list-group-item" style="color: white; background-color: black;">Milão Contra Carvas</li>
-                        <li id="imagem-boss" class="list-group-item"><img src="assets/geeble.jpg" height="200px" width="200px"></li>
-                        <li id="hp-boss" class="list-group-item"><img src="assets/escudo.png" height="25px" style="margin: 10px;"><progress id="hp-boss" value="1000" style="accent-color: red;"></progress><br></li>
-                        <li id="raiva-boss" class="list-group-item"><img src="assets/raiva.jpg" height="25px" style="margin: 10px;"><progress id="raiva-boss" value="0" style="accent-color: #800080;"></progress></li>
-                        <li id="status" class="list-group-item"><img src="assets/sigma.jpg" height="25px" width="25px" style="margin: 10px;"><progress id="aura-boss" value="1000" style="accent-color: cyan;"></progress></li>
+                        <li class="list-group-item" style="color: white; background-color: black;">Milão Contra Carvas</li>
+                        <li class="list-group-item"><img src="assets/geeble.jpg" height="200px" width="200px"></li>
+                        <li class="list-group-item"><img src="assets/escudo.png" height="25px" style="margin: 10px;"><progress id="hp-boss" value="100" style="accent-color: red;"></progress><br></li>
+                        <li class="list-group-item"><img src="assets/raiva.jpg" height="25px" style="margin: 10px;"><progress id="mp-boss" value="100" style="accent-color: #800080;"></progress></li>
+                        <li class="list-group-item"><img src="assets/sigma.jpg" height="25px" width="25px" style="margin: 10px;"><progress id="especial-boss" value="100" style="accent-color: cyan;"></progress></li>
                     </ul>
                 </div>
             </div> 
@@ -35,17 +36,18 @@
                 <div class="col text-start" id="col-botoes" >
                     <div class="btn-group" id="controles" style="margin-left: 100px; display: flex; align-self: center;">
                        <ul style="list-style-type: none;"> 
-                            <li><button class="btn btn-warning" style="margin: 5px; width: 175px;">ATTACK</button></li>
-                            <li><button class="btn btn-warning" style="margin: 5px;width: 175px;">SKILL</button></li>
-                            <li><button class="btn btn-warning" style="margin: 5px;width: 175px;">ESPECIAL</button></li>
+                            <li><button class="btn btn-warning" style="margin: 5px; width: 175px;" id="btn-ataque">ATTACK</button></li>
+                            <li><button class="btn btn-warning" style="margin: 5px;width: 175px;" id="btn-skill">SKILL</button></li>
+                            <li><button class="btn btn-warning" style="margin: 5px;width: 175px;" id="btn-especial">ESPECIAL</button></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col text-start" id="status" style="background-color: white; color: black; padding: 0px; margin: 25px; font-family: Arial, Helvetica, sans-serif;">
                     <div class="text-center" style="background-color: black; color: white;"><h1>STATUS</h1></div>
-                    <div class="text-center"><p>O inimigo aparece! ele parece furioso</p></div>
-                </div>
+                    <div class="text-center" id="msg"><p>O inimigo aparece! Ele parece furioso!</p></div>
+                </div>           
             </div>
+            <script src="jogo.js"></script>
                 </div>
             </div>
         </div>
