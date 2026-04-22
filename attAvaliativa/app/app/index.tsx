@@ -1,15 +1,13 @@
 import React from 'react';
 import {Link} from 'expo-router';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet, Button} from 'react-native';
 
 export default function Index(){
     return (
         <View style = {estilo.container}>
             <Image source={require("@/assets/images/Skibidi_sigma.jpg")} style={estilo.texto}/>
             <Text style = {estilo.texto}>Bem vindo à Skibidi Sigma enterprises!</Text>
-        <View>
-            
-        </View>
+            <Link href= "/sobre" style= {estilo.botao}> sobre</Link>
         </View>
         
     )
@@ -34,8 +32,8 @@ const estilo = StyleSheet.create({
     },
     botao: {
         fontSize: 17,
-        backgroundColor: '(0, 255, 0)',
-        color: 'black',
+        backgroundColor: '#0000FF',
+        color: '#FFFFFF',
         borderRadius: 3,
         padding: 17,
     }

@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, Image, But} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 export default function Index(){
     return (
         <View style = {estilo.container}>
